@@ -4,11 +4,11 @@ export class LinkedList {
   list = // null;
     {
       head: {
-        value: 1,
+        value: 'pine',
         next: {
-          value: 2,
+          value: 'apple',
           next: {
-            value: 3,
+            value: 'juice',
             next: null,
           },
         },
@@ -95,5 +95,17 @@ export class LinkedList {
       pointer = pointer.next;
     }
     return false;
+  }
+
+  find(value) {
+    if (!this.list) return null;
+    let pointer = this.list.head;
+    let counter = 1;
+    while (pointer) {
+      if (pointer.value === value) return counter;
+      pointer = pointer.next;
+      counter += 1;
+    }
+    return null;
   }
 }
