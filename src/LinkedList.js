@@ -54,4 +54,13 @@ export class LinkedList {
     if (!this.list) return null;
     return this.list.head;
   }
+
+  tail() {
+    if (!this.list) return 'ERROR: No nodes in list.';
+    let pointer = this.list.head;
+    while (pointer.next) {
+      pointer = pointer.next;
+    }
+    return pointer;
+  }
 }
