@@ -2,4 +2,4 @@ import './styles.css';
 import { LinkedList } from './LinkedList';
 
 const list = new LinkedList();
-console.log(list.pop());
+console.log(list.contains(4));

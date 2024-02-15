@@ -86,4 +86,14 @@ export class LinkedList {
     prevPointer.next = null;
     return this.list;
   }
+
+  contains(value) {
+    if (!this.list) return 'ERROR: No nodes.';
+    let pointer = this.list.head;
+    while (pointer) {
+      if (pointer.value === value) return true;
+      pointer = pointer.next;
+    }
+    return false;
+  }
 }
