@@ -74,4 +74,16 @@ export class LinkedList {
     }
     return pointer;
   }
+
+  pop() {
+    if (!this.list) return 'ERROR: No nodes to remove.';
+    let prevPointer = null;
+    let curPointer = this.list.head;
+    while (curPointer.next) {
+      prevPointer = curPointer;
+      curPointer = curPointer.next;
+    }
+    prevPointer.next = null;
+    return this.list;
+  }
 }
