@@ -63,4 +63,15 @@ export class LinkedList {
     }
     return pointer;
   }
+
+  at(index) {
+    if (!this.list) return null;
+    let pointer = this.list.head;
+    let curIndex = 1;
+    while (curIndex < index) {
+      pointer = pointer.next;
+      curIndex += 1;
+    }
+    return pointer;
+  }
 }
