@@ -140,4 +140,25 @@ export class LinkedList {
     }
     return 'ERROR: Index outside of list range.';
   }
+
+  removeAt(index) {
+    if (!this.list) return 'ERROR: Empty list.';
+    if (index === 1) {
+      this.list.head = this.list.head.next;
+      return this.list;
+    }
+    let prevPointer = null;
+    let curPointer = this.list.head;
+    let counter = 1;
+    while (curPointer) {
+      if (counter === index) {
+        prevPointer.next = curPointer.next;
+        return this.list;
+      }
+      prevPointer = curPointer;
+      curPointer = curPointer.next;
+      counter += 1;
+    }
+    return 'ERROR: Index outside of list range.';
+  }
 }
