@@ -108,4 +108,18 @@ export class LinkedList {
     }
     return null;
   }
+
+  toString() {
+    if (!this.list) return null;
+    const arr = [];
+    let pointer = this.list.head;
+    while (pointer) {
+      arr.push(pointer.value);
+      pointer = pointer.next;
+    }
+    return arr
+      .map((value) => `( ${value} )`)
+      .join(' -> ')
+      .concat(' -> null');
+  }
 }
