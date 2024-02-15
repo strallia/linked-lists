@@ -6,7 +6,10 @@ export class LinkedList {
       value: 1,
       next: {
         value: 2,
-        next: null,
+        next: {
+          value: 3,
+          next: null,
+        },
       },
     },
   };
@@ -27,8 +30,21 @@ export class LinkedList {
   }
 
   prepend(value) {
+    // TODO: cover case for when list = null
     const curHead = this.list.head;
     this.list.head = new Node(value, curHead);
     return this.list;
+  }
+
+  size() {
+    if (!this.list) return 0;
+
+    let pointer = this.list.head;
+    let counter = 1;
+    while (pointer.next) {
+      counter += 1;
+      pointer = pointer.next;
+    }
+    return counter;
   }
 }
