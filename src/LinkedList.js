@@ -1,31 +1,30 @@
 import { Node } from './Node';
 
 export class LinkedList {
-  list = {
-    head: {
-      value: 1,
-      next: {
-        value: 2,
-        next: {
-          value: 3,
-          next: null,
-        },
-      },
-    },
-  };
+  list = null;
+  // {
+  //   head: {
+  //     value: 1,
+  //     next: {
+  //       value: 2,
+  //       next: {
+  //         value: 3,
+  //         next: null,
+  //       },
+  //     },
+  //   },
+  // };
 
   append(value) {
     if (!this.list) {
-      this.list = { head: null };
-      this.list.head = new Node(value);
+      this.list = { head: new Node(value) };
+    } else {
+      let tmp = this.list.head;
+      while (tmp.next) {
+        tmp = tmp.next;
+      }
+      tmp.next = new Node(value);
     }
-
-    let tmp = this.list.head;
-    while (tmp.next) {
-      tmp = tmp.next;
-    }
-    tmp.next = new Node(value);
-
     return this.list;
   }
 
