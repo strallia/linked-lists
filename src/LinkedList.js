@@ -1,19 +1,19 @@
 import { Node } from './Node';
 
 export class LinkedList {
-  list = null;
-  // {
-  //   head: {
-  //     value: 1,
-  //     next: {
-  //       value: 2,
-  //       next: {
-  //         value: 3,
-  //         next: null,
-  //       },
-  //     },
-  //   },
-  // };
+  list = // null;
+    {
+      head: {
+        value: 1,
+        next: {
+          value: 2,
+          next: {
+            value: 3,
+            next: null,
+          },
+        },
+      },
+    };
 
   append(value) {
     if (!this.list) {
@@ -48,5 +48,10 @@ export class LinkedList {
       pointer = pointer.next;
     }
     return counter;
+  }
+
+  head() {
+    if (!this.list) return null;
+    return this.list.head;
   }
 }
