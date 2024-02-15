@@ -1,5 +1,5 @@
 import './styles.css';
 import { LinkedList } from './LinkedList';
 
-const list = new LinkedList();
-console.log(list.removeAt(3));
+const listRef = new LinkedList(['pine', 'apple', 'juice']);
+console.log(listRef.list);

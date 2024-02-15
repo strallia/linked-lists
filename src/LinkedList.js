@@ -1,19 +1,12 @@
 import { Node } from './Node';
 
 export class LinkedList {
-  list = // null;
-    {
-      head: {
-        value: 'pine',
-        next: {
-          value: 'apple',
-          next: {
-            value: 'juice',
-            next: null,
-          },
-        },
-      },
-    };
+  list = null;
+
+  constructor(arr = null) {
+    if (!arr) return;
+    arr.forEach((value) => this.append(value));
+  }
 
   append(value) {
     if (!this.list) {
