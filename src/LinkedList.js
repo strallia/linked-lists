@@ -1,7 +1,12 @@
 import { Node } from './Node';
 
 export class LinkedList {
-  list = null;
+  list = {
+    head: {
+      value: 1,
+      next: null,
+    },
+  };
 
   append(value) {
     if (!this.list) {
@@ -9,8 +14,12 @@ export class LinkedList {
       this.list.head = new Node(value);
     }
 
-    // TODO: append value to end of list when list is not empty.
-    // Requires write traversing method.
+    let tmp = this.list.head;
+    while (tmp.next) {
+      tmp = tmp.next;
+    }
+    tmp.next = new Node(value);
+
     return this.list;
   }
 }
