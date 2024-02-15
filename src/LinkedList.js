@@ -29,9 +29,12 @@ export class LinkedList {
   }
 
   prepend(value) {
-    // TODO: cover case for when list = null
-    const curHead = this.list.head;
-    this.list.head = new Node(value, curHead);
+    if (!this.list) {
+      this.append(value);
+    } else {
+      const curHead = this.list.head;
+      this.list.head = new Node(value, curHead);
+    }
     return this.list;
   }
 
